@@ -42,7 +42,7 @@ const request=require('request')
 //    - Coordinate error, pass string for error
 //    - Success, pass forecast string for data (same format as from before)
 const forecast=(lat,lon,callback)=>{
-    const url='http://api.weatherstack.com/current?access_key=902d836b6cf59d8dbd59ee861a5ea01d&query=11.http://api.weatherstack.com/current?access_key=902d836b6cf59d8dbd59ee861a5ea01d&query='+lat+','+lon+'&units=f'
+    const url='http://api.weatherstack.com/current?access_key=902d836b6cf59d8dbd59ee861a5ea01d&query='+lat+','+lon+'&units=f'
     request({url,json:true},(error,{body})=>{
         if(error){
             callback('Unable to connect with weather Stack',undefined)

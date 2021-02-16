@@ -10,7 +10,7 @@ const publicpath=path.join(__dirname,'../public')
 const viewspath=path.join(__dirname,'../templates/views')
 const partialspath=path.join(__dirname,'../templates/partials')
 const app=express()
-
+const port=process.env.PORT || 3000
 //setup handlebars engine and views location
 app.set('view engine','hbs')
 app.set('views',viewspath)
@@ -75,7 +75,7 @@ app.get('/weather', (req, res) => {
             }
             res.send({
                 forecast: forecastdata,
-                location,
+                location:location,
                 address:req.query.address
             })
           })
@@ -113,6 +113,6 @@ app.get('*',(req,res)=>{
     })
 })
 
-app.listen(3000,()=>{
-    console.log('Server is up on port 3000.')
+app.listen(port,()=>{
+    console.log('Server is up on port '+port+'.')
 })
