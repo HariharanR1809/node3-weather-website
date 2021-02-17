@@ -49,7 +49,7 @@ const forecast=(lat,lon,callback)=>{
         }else if(body.error){
             callback('Unable to find location',undefined)
         }else{
-            callback(undefined,'weather: '+body.current.weather_descriptions[0]+' tempurature: '+body.current.temperature+' feelslike: '+body.current.feelslike+' region: '+body.location.region)
+            callback(undefined,'weather: '+body.current.weather_descriptions[0]+' tempurature: '+body.current.temperature+' feelslike: '+body.current.feelslike+' region: '+body.location.region+' Humidity: '+body.current.humidity)
         }
     })
     }
